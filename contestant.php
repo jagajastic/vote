@@ -31,10 +31,10 @@ try {
 <body style="backgorund: white; overflow:none;">
     <!-- nav bar  -->
     <?php require_once 'nav.php';?>
-    <div class="mt-5">
+    <div class="mt-3">
         <h1></h1>
     </div>
-    <div class="row p-md-4 ml-3">
+    <div class="row p-md-4 pl-5 pr-5 ml-5">
     <?php
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<div class="card m-md-2 mt-4" style="width: 18rem;">';
