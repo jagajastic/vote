@@ -21,17 +21,21 @@
     
     if ($count == 1) {
         if ($row["vote"] == 0) {
-            $stmt = $db_con->prepare("SELECT * FROM students WHERE id='$contestant_id' LIMIT 1");
+            $stmt = $db_con->prepare("SELECT * FROM students WHERE id=? LIMIT 1");
+            $stmt->bindParam(1, $contestant_id);
             $stmt->execute();
             $studentCount	= $stmt->rowCount();
             if ($studentCount == 1) {
-                $stmt = $db_con->prepare("UPDATE students SET vote = vote + 1 WHERE id='$contestant_id'");
+                $stmt = $db_con->prepare("UPDATE students SET vote = vote + 1 WHERE id=?");
+                $stmt->bindParam(1, $contestant_id);
                 $stmt->execute();
                 if ($stmt) {
-                    $stmt = $db_con->prepare("UPDATE valvoters SET vote = 1 WHERE email='$session_var'");
+                    $stmt = $db_con->prepare("UPDATE valvoters SET vote = 1 WHERE email=?");
+                    $stmt->bindParam(1, $session_var);
                     $stmt->execute();
                     if ($stmt) {
-                        $stmt = $db_con->prepare("SELECT * FROM students WHERE id='$contestant_id' LIMIT 1");
+                        $stmt = $db_con->prepare("SELECT * FROM students WHERE id=? LIMIT 1");
+                        $stmt->bindParam(1, $contestant_id);
                         $stmt->execute();
                         $student = $stmt->fetch(PDO::FETCH_ASSOC);
                         http_response_code(200);
