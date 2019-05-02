@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($count == 1) { 
                     // create session for the user
                     $_SESSION["email"] = $email;
-                    header('Location: /contestant.php');
+                    header('Location: ./contestant.php');
                 } else {
                     $error = 'User account not found!';
                 }
@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         placeholder="Enter email" required>
                     <small id="emailHelp" class="form-text text-danger"><?php echo $error ?></small>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">login</button>
             </form>
             <div class="card-footer">
-            <a class="btn btn-primary" href="/register.php">Signup</a>
+            <a class="btn btn-primary" href="./register.php">Signup</a>
         </div>
         </div>
     </div>

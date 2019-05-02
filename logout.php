@@ -32,11 +32,11 @@ session_unset();
                 Logged out
             </div>
             <div class="card-body">
-                <p>Logout succes...</p>
+                <p>Logout successful...</p>
             </div>
             <div class="card-footer">
-            <a class="btn btn-primary" href="/register.php">Signup</a>
-            <a class="btn btn-info" href="/login.php">Login</a>
+            <a class="btn btn-primary" href="./register.php">Signup</a>
+            <a class="btn btn-info" href="./login.php">Login</a>
         </div>
         </div>
     </div>
