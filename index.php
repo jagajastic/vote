@@ -1,2 +1,2 @@
 <?php
-header('Location: /contestant.php');
+header('Location: /valleevote/contestant.php');
