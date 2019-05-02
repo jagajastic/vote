@@ -4,7 +4,7 @@ require 'dbconfig.php';
 ini_set('display_error', '1');
 error_reporting(E_ALL);
 // check if login take to vote
-$_SESSION["email"] ? header('Location: /contestant.php') : header('Location: /login.php');
+$_SESSION["email"] ? header('Location: ./contestant.php') : '';
 
 
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // set the user to the session
                 $_SESSION["email"] = $email;
                 // redirect to the voting page
-                header('Location: /contestant.php');
+                header('Location: ./contestant.php');
             } else {
                 $error = 'Something went wrong!';
             }
@@ -78,10 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-danger"><?php echo $error ?></small>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Signup</button>
         </form>
         <div class="card-footer">
-            <a href="/login.php">Login</a>
+            <a href="./login.php">Login</a>
         </div>
     </div>
     <script src="jquery-2.1.4.min.js"></script>
